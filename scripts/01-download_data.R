@@ -11,10 +11,18 @@
 #### Workspace setup ####
 library(opendatatoronto)
 library(tidyverse)
-# [...UPDATE THIS...]
+
 
 #### Download data ####
-# [...ADD CODE HERE TO DOWNLOAD...]
+bullying_file_path <- 
+  "C:/Users/dell/Downloads/156901-V1/data/2021_03_30_monthly_2012_2021_state_bullying_topic.csv"
+
+bullying_raw <- read.csv(bullying_file_path)
+
+cyberbully_file_path <-
+  "C:/Users/dell/Downloads/156901-V1/data/2021_03_30_monthly_2012_2021_state_cyb_bullying_topic.csv"
+
+cyberbully_raw <- read.csv(cyberbully_file_path)
 
 
 
