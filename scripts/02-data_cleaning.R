@@ -1,44 +1,57 @@
 #### Preamble ####
-# Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
-# License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Purpose: Cleans the raw bully data and combine three bullying types
+# into one table
+# Author: Mary Cheng, Yimiao Yuan, Shipeng Zhang
+# Date: 11 February 2024
+# Contact: yimiaomail@gmail.com
+# License: --
+# Pre-requisites: run 01-download_data.R first to get the raw data
+
 
 #### Workspace setup ####
+# install required packages
+# install.packages("tidyverse")
+
+# load library
 library(tidyverse)
 
-#### Clean data ####
-raw_data <- read_csv("inputs/data/plane_data.csv")
 
-cleaned_data <-
-  raw_data |>
-  janitor::clean_names() |>
-  select(wing_width_mm, wing_length_mm, flying_time_sec_first_timer) |>
-  filter(wing_width_mm != "caw") |>
-  mutate(
-    flying_time_sec_first_timer = if_else(flying_time_sec_first_timer == "1,35",
-                                   "1.35",
-                                   flying_time_sec_first_timer)
-  ) |>
-  mutate(wing_width_mm = if_else(wing_width_mm == "490",
-                                 "49",
-                                 wing_width_mm)) |>
-  mutate(wing_width_mm = if_else(wing_width_mm == "6",
-                                 "60",
-                                 wing_width_mm)) |>
-  mutate(
-    wing_width_mm = as.numeric(wing_width_mm),
-    wing_length_mm = as.numeric(wing_length_mm),
-    flying_time_sec_first_timer = as.numeric(flying_time_sec_first_timer)
-  ) |>
-  rename(flying_time = flying_time_sec_first_timer,
-         width = wing_width_mm,
-         length = wing_length_mm
-         ) |> 
-  tidyr::drop_na()
+#### Clean data ####
+# read in the raw data
+bullying_raw <- read.csv("inputs/data/bullying_raw_data.csv")
+cyberbully_raw <- read.csv("cyberbully_raw_data.csv")
+schbully_raw <- read.csv("schbully_raw_data.csv")
+
+# clean data
+# rename columns to improve readability
+# choose 3 states to investigate
+# add a column indicate the type of bullying
+# select the desired columns
+bully_clean <-
+  bullying_raw |>
+  rename(us_state = dma_json_code, num_of_searches = hits) |>
+  filter(us_state %in% c("US-NY", "US-LA", "US-NJ")) |>
+  mutate(bully_type = 'bully') |>
+  select(us_state, date, num_of_searches, bully_type)
+
+cyberbully_clean <-
+  cyberbully_raw |>
+  rename(us_state = dma_json_code, num_of_searches = hits) |>
+  filter(us_state %in% c("US-NY", "US-LA", "US-NJ")) |>
+  mutate(bully_type = 'cyberbully') |>
+  select(us_state, date, num_of_searches, bully_type)
+
+schbully_clean <-
+  schbully_raw |>
+  rename(us_state = dma_json_code, num_of_searches = hits) |>
+  filter(us_state %in% c("US-NY", "US-LA", "US-NJ")) |>
+  mutate(bully_type = 'schbully') |>
+  select(us_state, date, num_of_searches, bully_type)
+
+# combine 3 tables into 1 table
+bully_comb <- bind_rows(bully_clean, cyberbully_clean)
+bully_comb_clean <- bind_rows(bully_comb, schbully_clean)
+
 
 #### Save data ####
-write_csv(cleaned_data, "outputs/data/analysis_data.csv")
+write_csv(bully_comb_clean, "outputs/data/bully_clean_data.csv")
