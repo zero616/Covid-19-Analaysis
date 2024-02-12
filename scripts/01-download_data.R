@@ -8,7 +8,7 @@
 # Any other information needed? [...UPDATE THIS...]
 
 
-#### Workspace setup ####
+#### Workspace setup ####got
 library(opendatatoronto)
 library(tidyverse)
 
@@ -24,12 +24,16 @@ cyberbully_file_path <-
 
 cyberbully_raw <- read.csv(cyberbully_file_path)
 
+schbully_file_path <-
+  "./inputs/data/2021_03_30_monthly_2012_2021_state_sch_bullying_topic.csv"
 
+schbully_raw <- read.csv(schbully_file_path)
 
 #### Save data ####
 # [...UPDATE THIS...]
 # change the_raw_data to whatever name you assigned when you downloaded it.
 write_csv(bullying_raw, "inputs/data/bullying_raw_data.csv") 
 write_csv(cyberbully_raw, "inputs/data/cyberbully_raw_data.csv") 
+write_csv(schbully_raw, "inputs/data/schbully_raw_data.csv") 
 
          
