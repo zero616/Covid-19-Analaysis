@@ -38,7 +38,6 @@ schbully_raw <- read.csv(schbully_file_path)
 
 
 #### Save data ####
-# [...UPDATE THIS...]
 # change the_raw_data to whatever name you assigned when you downloaded it.
 write_csv(bullying_raw, "inputs/data/bullying_raw_data.csv") 
 write_csv(cyberbully_raw, "inputs/data/cyberbully_raw_data.csv") 

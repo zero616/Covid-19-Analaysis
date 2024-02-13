@@ -19,8 +19,8 @@ library(tidyverse)
 #### Clean data ####
 # read in the raw data
 bullying_raw <- read.csv("inputs/data/bullying_raw_data.csv")
-cyberbully_raw <- read.csv("cyberbully_raw_data.csv")
-schbully_raw <- read.csv("schbully_raw_data.csv")
+cyberbully_raw <- read.csv("inputs/data/cyberbully_raw_data.csv")
+schbully_raw <- read.csv("inputs/data/schbully_raw_data.csv")
 
 # clean data
 # rename columns to improve readability
@@ -31,7 +31,7 @@ bully_clean <-
   bullying_raw |>
   rename(us_state = dma_json_code, num_of_searches = hits) |>
   filter(us_state %in% c("US-NY", "US-LA", "US-NJ")) |>
-  mutate(bully_type = 'bully') |>
+  mutate(bully_type = 'sch_cyb_bully') |>
   select(us_state, date, num_of_searches, bully_type)
 
 cyberbully_clean <-
