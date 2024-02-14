@@ -18,15 +18,10 @@ library(tidyverse)
 
 #### Clean data ####
 # read in the raw data
-<<<<<<< HEAD
 bullying_raw <- read.csv("../inputs/data/bullying_raw_data.csv")
 cyberbully_raw <- read.csv("../inputs/data/cyberbully_raw_data.csv")
 schbully_raw <- read.csv("../inputs/data/schbully_raw_data.csv")
-=======
-bullying_raw <- read.csv("inputs/data/bullying_raw_data.csv")
-cyberbully_raw <- read.csv("inputs/data/cyberbully_raw_data.csv")
-schbully_raw <- read.csv("inputs/data/schbully_raw_data.csv")
->>>>>>> b8c7f12379b2918d551aeb67d2f09f971b8ae24f
+
 
 # clean data
 # rename columns to improve readability
@@ -60,9 +55,6 @@ bully_comb_clean <- bind_rows(bully_comb, schbully_clean)
 
 
 #### Save data ####
-<<<<<<< HEAD
 write_csv(bully_comb_clean, "../outputs/data/bully_clean_data.csv")
 
-=======
-write_csv(bully_comb_clean, "outputs/data/bully_clean_data.csv")
->>>>>>> b8c7f12379b2918d551aeb67d2f09f971b8ae24f
+
