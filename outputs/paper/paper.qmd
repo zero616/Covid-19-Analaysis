@@ -7,7 +7,7 @@ author:
 thanks: "Code and data are available at: https://github.com/zero616/Covid-19-Analaysis.git."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "Each year in the United States, about one in five teens is bullied at school. When COVID-19 interferes with in-person interactions, we use Internet search data from Google Trend to track bullying patterns. We found a downward trend in searches about bullying and cyberbullying in schools as schools shift to online learning in the spring of 2020. This finding debunks the idea that cyberbullying increases as students become more exposed to technology, explaining the impact of epidemics on student mental health and providing ideas for future responses to cyber and school bullying."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -229,24 +229,6 @@ The study analyzes the bullying situation before, during, and after COVID-19, sp
 ## Future Steps
 Future research should focus on gathering more inclusive and representative data by increasing the volume of data entries and mitigating bias in data collection. 
 Beyond simply collecting data about bullying, researchers should investigate the mental well-being of students affected by bullying.By investigating their mental well-being, researchers can arrive at conclusions if the mental health support system is effective for students in the school. It is important to ensure that individuals who experience bullying have access to the necessary resources and support. This makes sure that the research not only analyzes the situation, but also contributes to actionable improvements for those affected.
-
-\newpage
-
-\appendix
-
-# Appendix {-}
-
-
-# Additional data details
-
-# Model details {#sec-model-details}
-
-## Posterior predictive check
-
-
-## Diagnostics
-
-
 
 
 \newpage
