@@ -21,13 +21,26 @@ library(tidyverse)
 bullying_raw <- read.csv("../inputs/data/bullying_raw_data.csv")
 cyberbully_raw <- read.csv("../inputs/data/cyberbully_raw_data.csv")
 schbully_raw <- read.csv("../inputs/data/schbully_raw_data.csv")
-
+pop_2019<- read.csv("../inputs/data/US_NY_Population_2019.csv")
+pop_2020<- read.csv("../inputs/data/US_NY_Population_2020.csv")
 
 # clean data
 # rename columns to improve readability
 # choose 3 states to investigate
 # add a column indicate the type of bullying
 # select the desired columns
+pop_2019_clean <-
+  pop_2019 |>
+  rename(Age = Age) |>
+  filter(Age %in% c("5-9", "10-14", "15-17")) |>
+  select(Age, Total)
+
+pop_2020_clean <-
+  pop_2020 |>
+  rename(Age = Age) |>
+  filter(Age %in% c("5-9", "10-14", "15-17")) |>
+  select(Age, Total)
+
 bully_clean <-
   bullying_raw |>
   rename(us_state = dma_json_code, num_of_searches = hits) |>
