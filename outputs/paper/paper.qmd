@@ -36,12 +36,9 @@ The remainder of this paper is structured as follows. @sec-data....
 file_path <- "../../outputs/data/bully_clean_data.csv"
 bully_clean_data <- read.csv(file_path)
 bully_clean_data$date <- as.Date(bully_clean_data$date)
-NY_pop_2019_clean<- read.csv("../../outputs/data/NY_pop_2019_clean.csv")
-NY_pop_2020_clean<- read.csv("../../outputs/data/NY_pop_2020_clean.csv")
-NJ_pop_2019_clean<- read.csv("../../outputs/data/NJ_pop_2019_clean.csv")
-NJ_pop_2020_clean<- read.csv("../../outputs/data/NJ_pop_2020_clean.csv")
-LA_pop_2019_clean<- read.csv("../../outputs/data/LA_pop_2019_clean.csv")
-LA_pop_2020_clean<- read.csv("../../outputs/data/LA_pop_2020_clean.csv")
+pop_2019_clean<- read.csv("../../outputs/data/pop_2019_clean.csv")
+pop_2020_clean<- read.csv("../../outputs/data/pop_2020_clean.csv")
+state_ratios<- read.csv("../../outputs/data/state_ratios.csv")
 sample_data <- head(bully_clean_data, 6)
 ```
 
@@ -56,6 +53,11 @@ Talk way more about it.
 # Results
 
 ```{r}
+#| label: fig-Composite-Search-Intensity
+#| fig-cap: Composite-Search-Intensity by type
+#| warning: false
+#| message: false
+#| echo: false
 library(ggplot2)
 library(dplyr)
 # Assuming the date format is "%Y-%m-%d", you can use the following code
@@ -111,16 +113,23 @@ ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y =
 
 
 ```
-
+@fig-Composite-Search-Intensity shows the number of searches for bullying
+(by category) starting in 2012 and ending in 2021. The graph visually shows how bullying searches relate to time. From this we can see every year during the first month of school, the number of searches for bullying rises to a peak, and then quickly dwindles to a trough in the summer. Depending on where the red dotted line is, that's when the pandemic started. Affected by online learning, the search volume for bullying broke the pattern of previous years and remained at a low level. Only searches for cyberbullying rebounded, but not by much.
 
 
 ```{r}
-data %>%
-  arrange(desc(pop)) %>%
-  mutate(country = factor(country)) %>%
-  ggplot(aes(x=gdpPercap, y=lifeExp, size = pop)) +
-    geom_point(alpha=0.5) +
-    scale_size(range = c(.1, 24), name="Population (M)")
+#| label: fig-Number-of-Searches-represented-by-point-size
+#| fig-cap: Composite-Search-Intensity by type
+#| warning: false
+#| message: false
+#| echo: false
+ggplot(data = state_ratios, aes(x = fraction, y = us_state, size = num_of_searches)) +
+  geom_point(alpha = 0.5, color = "blue") +  # Adjust color as needed
+  labs(title = "Scatter Plot of Fraction vs. US State",
+       x = "Fraction",
+       y = "US State",
+       subtitle = "Number of Searches represented by point size") +
+  theme_minimal()  # Customize the theme as needed
 ```
 
 
