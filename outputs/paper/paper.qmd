@@ -36,6 +36,12 @@ The remainder of this paper is structured as follows. @sec-data....
 file_path <- "../../outputs/data/bully_clean_data.csv"
 bully_clean_data <- read.csv(file_path)
 bully_clean_data$date <- as.Date(bully_clean_data$date)
+NY_pop_2019_clean<- read.csv("../../outputs/data/NY_pop_2019_clean.csv")
+NY_pop_2020_clean<- read.csv("../../outputs/data/NY_pop_2020_clean.csv")
+NJ_pop_2019_clean<- read.csv("../../outputs/data/NJ_pop_2019_clean.csv")
+NJ_pop_2020_clean<- read.csv("../../outputs/data/NJ_pop_2020_clean.csv")
+LA_pop_2019_clean<- read.csv("../../outputs/data/LA_pop_2019_clean.csv")
+LA_pop_2020_clean<- read.csv("../../outputs/data/LA_pop_2020_clean.csv")
 sample_data <- head(bully_clean_data, 6)
 ```
 
@@ -109,7 +115,12 @@ ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y =
 
 
 ```{r}
-
+data %>%
+  arrange(desc(pop)) %>%
+  mutate(country = factor(country)) %>%
+  ggplot(aes(x=gdpPercap, y=lifeExp, size = pop)) +
+    geom_point(alpha=0.5) +
+    scale_size(range = c(.1, 24), name="Population (M)")
 ```
 
 

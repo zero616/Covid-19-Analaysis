@@ -21,26 +21,53 @@ library(tidyverse)
 bullying_raw <- read.csv("../inputs/data/bullying_raw_data.csv")
 cyberbully_raw <- read.csv("../inputs/data/cyberbully_raw_data.csv")
 schbully_raw <- read.csv("../inputs/data/schbully_raw_data.csv")
-pop_2019<- read.csv("../inputs/data/US_NY_Population_2019.csv")
-pop_2020<- read.csv("../inputs/data/US_NY_Population_2020.csv")
+LA_pop_2019<- read.csv("../inputs/data/US_LA_Population_2019.csv")
+LA_pop_2020<- read.csv("../inputs/data/US_LA_Population_2020.csv")
+NJ_pop_2019<- read.csv("../inputs/data/US_NJ_Population_2019.csv")
+NJ_pop_2020<- read.csv("../inputs/data/US_NJ_Population_2020.csv")
+NY_pop_2019<- read.csv("../inputs/data/US_NY_Population_2019.csv")
+NY_pop_2020<- read.csv("../inputs/data/US_NY_Population_2020.csv")
 
 # clean data
 # rename columns to improve readability
 # choose 3 states to investigate
 # add a column indicate the type of bullying
 # select the desired columns
-pop_2019_clean <-
+NY_pop_2019_clean <-
   pop_2019 |>
   rename(Age = Age) |>
   filter(Age %in% c("5-9", "10-14", "15-17")) |>
   select(Age, Total)
 
-pop_2020_clean <-
+NY_pop_2020_clean <-
   pop_2020 |>
   rename(Age = Age) |>
   filter(Age %in% c("5-9", "10-14", "15-17")) |>
   select(Age, Total)
 
+NJ_pop_2019_clean <-
+  pop_2019 |>
+  rename(Age = Age) |>
+  filter(Age %in% c("5-9", "10-14", "15-17")) |>
+  select(Age, Total)
+
+NJ_pop_2020_clean <-
+  pop_2020 |>
+  rename(Age = Age) |>
+  filter(Age %in% c("5-9", "10-14", "15-17")) |>
+  select(Age, Total)
+
+LA_pop_2019_clean <-
+  pop_2019 |>
+  rename(Age = Age) |>
+  filter(Age %in% c("5-9", "10-14", "15-17")) |>
+  select(Age, Total)
+
+LA_pop_2020_clean <-
+  pop_2020 |>
+  rename(Age = Age) |>
+  filter(Age %in% c("5-9", "10-14", "15-17")) |>
+  select(Age, Total)
 bully_clean <-
   bullying_raw |>
   rename(us_state = dma_json_code, num_of_searches = hits) |>
@@ -69,5 +96,10 @@ bully_comb_clean <- bind_rows(bully_comb, schbully_clean)
 
 #### Save data ####
 write_csv(bully_comb_clean, "../outputs/data/bully_clean_data.csv")
-
+write_csv(NY_pop_2019_clean, "../outputs/data/NY_pop_2019_clean.csv")
+write_csv(NY_pop_2020_clean, "../outputs/data/NY_pop_2020_clean.csv")
+write_csv(NJ_pop_2019_clean, "../outputs/data/NJ_pop_2019_clean.csv")
+write_csv(NJ_pop_2020_clean, "../outputs/data/NJ_pop_2020_clean.csv")
+write_csv(LA_pop_2019_clean, "../outputs/data/LA_pop_2019_clean.csv")
+write_csv(LA_pop_2020_clean, "../outputs/data/LA_pop_2020_clean.csv")
 
