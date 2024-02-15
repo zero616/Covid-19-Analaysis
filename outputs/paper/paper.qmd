@@ -45,7 +45,7 @@ This paper will replicate the data that was originally collected for the paper �
 The researchers state that data from Google Trends are less likely to be subjected to potential bias, since the data are not self-reported. Moreover, the data from Google Trends represents the full population of Google search users in the United States, thus it does not have the potential issue of under-representation of a certain group.
 
 ## Data Measurements
-The measurement of bullying from Google Trends is the search intensity of keywords, which are published every month [@citePaper]. Search intensity stands for the fraction of a given area’s Google searches for a specific topic. Google Trends normalizes the search intensity numbers to get relative intensity over time and across states. The search intensity is measured on a scale of 0 to 100, where 0 represents the lowest search intensity and 100 the highest.
+The measurement of bullying from Google Trends is the search intensity of keywords, which are published every month (@citePaper). Search intensity stands for the fraction of a given area’s Google searches for a specific topic. Google Trends normalizes the search intensity numbers to get relative intensity over time and across states. The search intensity is measured on a scale of 0 to 100, where 0 represents the lowest search intensity and 100 the highest.
 
 
 ## Methodology
@@ -55,11 +55,16 @@ Some data cleaning is performed, such as renaming column names, filtering and mu
 
 ## Features
 The original dataset contained 5 variables, which are named as “dma_json_code”, “date”, “keyword”, “hits”, and “ratio”. 
-1. dma_json_code: the states of the United States
-2. date: the first day of every month from 2012. 01 to 2021. 02
+
+1. dma_json_code: the states of the United States.
+
+2. date: the first day of every month from January 2012 to February 2021.
+
 3. keyword: specific words that the people search on Google Trends that relate to bullying.
+
 4. hits: number of searchers of keywords in each month.
-5. ratio: ratio of the search intensity in Google Trend
+
+5. ratio: ratio of the search intensity in Google Trend.
 
  
 
@@ -79,7 +84,6 @@ sample_data <- head(bully_clean_data, 6)
 ```
 
 
-<<<<<<< HEAD
 
 Talk way more about it. 
 
@@ -100,7 +104,6 @@ knitr::kable(head(bully_clean_data),'markdown',col.names = c("US State", "Date",
 ```
 =======
 # Results {#sec-result}
->>>>>>> 0914a07c7800f4a36cfeaf114cceee1f0f606337
 
 ```{r}
 #| label: fig-Composite-Search-Intensity-bully
@@ -138,16 +141,10 @@ ggplot(bully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Tota
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-<<<<<<< HEAD
 
 ```{r}
 #| label: fig-Composite-Search-Intensity-school
 #| fig-cap: Composite-Search-Intensity school type
-=======
-```{r}
-#| label: fig-Composite-Search-Intensity-sch
-#| fig-cap: Composite-Search-Intensity by School Bullying
->>>>>>> 0914a07c7800f4a36cfeaf114cceee1f0f606337
 #| warning: false
 #| message: false
 #| echo: false
@@ -165,23 +162,13 @@ ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = T
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-<<<<<<< HEAD
 
-```{r}
-#| label: fig-Composite-Search-Intensity-cyber
-#| fig-cap: Composite-Search-Intensity cyber type
-#| warning: false
-#| message: false
-#| echo: false
-=======
 ```{r}
 #| label: fig-Composite-Search-Intensity-cyber
 #| fig-cap: Composite-Search-Intensity by Cyber Bullying
 #| warning: false
 #| message: false
 #| echo: false
-
->>>>>>> 0914a07c7800f4a36cfeaf114cceee1f0f606337
 # plot from "cyberbullying" data
 ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Total, group = 1)) +geom_point()+
   geom_line() +
@@ -196,13 +183,10 @@ ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y =
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-<<<<<<< HEAD
 The dataset represented by the table labeled @tbl-Search-Intensity furnishes a comprehensive overview of the cumulative number of searches related to bullying over the specified time frame. This table is a valuable resource for conducting a nuanced analysis, as it delineates key variables crucial for understanding the extent of harm experienced by individuals affected by bullying. The primary variables include time, state, the total number of searches, and the categorization of bullying incidents. The categorization of bullying incidents into different categories provides a nuanced understanding of the multifaceted nature of bullying. By disaggregating searches based on bullying categories, such as traditional bullying and cyberbullying, analysts can discern which forms of bullying are more prevalent or garner more attention during specific time periods and in particular states.
 
 In essence, the @tbl-Search-Intensity table serves as a rich repository of information, offering a multifaceted perspective on the harm suffered by individuals affected by bullying. Researchers can leverage this dataset to uncover temporal trends, regional variations, and category-specific nuances, ultimately contributing to a more comprehensive and targeted approach in addressing the complex issue of bullying.
 
-=======
->>>>>>> 0914a07c7800f4a36cfeaf114cceee1f0f606337
 The data presented in @fig-Composite-Search-Intensity-bully provides valuable insights into the trends of searches from 2012 to 2021. The observed pattern, with peaks of bullying during the first month of school and troughs in the summer, suggests a recurring seasonal variation in the interest or concern about bullying . This cyclic behavior aligns with the typical school calendar, highlighting a potential correlation between the academic year's start and increased awareness or experiences related to bullying.
 
 The introduction of the red dotted line indicating the onset of the pandemic adds an intriguing layer to the analysis. It appears that the traditional pattern of increased bullying searches during the initial school month was disrupted by the pandemic. In @fig-Composite-Search-Intensity-sch, we can see that with the shift to online learning, there was a noticeable departure from the usual surge in bullying-related searches. This alteration in behavior might be attributed to changes in the educational environment, as students and educators adapted to new modes of interaction.
@@ -210,12 +194,9 @@ The introduction of the red dotted line indicating the onset of the pandemic add
 Surprisingly, despite the overall decrease in bullying searches during the pandemic, cyberbullying searches saw a notable rebound. (@fig-Composite-Search-Intensity-cyber) This suggests that while traditional forms of bullying may have diminished due to reduced in-person interactions, the online realm became a focal point for bullying concerns. The fact that cyberbullying searches did not rebound significantly may indicate that, even in the digital space, the overall awareness or concerns related to bullying remained somewhat subdued during this period.
 
 The findings underscore the complex interplay between societal factors, educational settings, and the digital landscape in shaping the dynamics of bullying searches. Future research could delve deeper into the specific nuances of cyberbullying during the pandemic, exploring how the online learning environment may have influenced the prevalence and perception of such incidents. Additionally, understanding the lasting impact of these changes on bullying awareness and intervention efforts is crucial for developing effective strategies to address this issue in evolving educational landscapes.
-<<<<<<< HEAD
 
 The two-dimensional analysis of bullying searches, as depicted in @fig-Number-of-Searches-represented-by-point-size, offers valuable insights into the regional variations and the overall prevalence of bullying concerns. By juxtaposing the number of bullying searches in specific states with the nationwide search volume, a nuanced understanding of the relative intensity of bullying-related issues emerges. The substantial discrepancy between the search volumes for bullying in New York State and New Jersey, with New York registering nearly twice the number of searches, underscores the regional disparities in the perception or awareness of bullying. This contrast could be influenced by a myriad of factors, such as differences in population density, educational policies, cultural dynamics, or varying levels of community engagement in anti-bullying initiatives. The elevated search volume in New York may suggest a higher incidence of bullying incidents or a greater public awareness and sensitivity to the issue. This heightened attention could be attributed to proactive anti-bullying campaigns, robust educational programs, or a more open dialogue surrounding the topic within the state. Conversely, the comparatively lower search volume in New Jersey may indicate a different set of contextual factors influencing the perception and reporting of bullying. The two-dimensional analysis not only provides insights into state-level variations but also allows for a comparison with the nationwide search volume. Understanding how specific states compare to the national average in terms of bullying searches can highlight regions where the issue is particularly salient or, conversely, where it may be relatively underreported or less prevalent. The two-dimensional analysis of bullying searches based on the number of state and nationwide searches reveals a nuanced landscape of regional variations in the perception and awareness of bullying. The disparities observed in Figure 4 provide a starting point for further investigations and interventions to address the complex and multifaceted nature of bullying at both the state and national levels.
 
-=======
->>>>>>> 0914a07c7800f4a36cfeaf114cceee1f0f606337
 
 
 ```{r}
@@ -231,6 +212,7 @@ ggplot(data = state_ratios, aes(x = fraction, y = us_state, size = num_of_search
   theme_minimal()  # Customize the theme as needed
 ```
 
+
 \newpage
 
 # Discussion {#sec-discussion}
@@ -238,7 +220,7 @@ ggplot(data = state_ratios, aes(x = fraction, y = us_state, size = num_of_search
 ## COVID-19 Effects on Bullying
 The overall bullying (@fig-Composite-Search-Intensity-bully) displays a decreasing trend over time, with a significant decline when COVID-19 pandemic emerged. The impact of COVID-19 on bullying cases results in a reduction to the lowest levels observed. The search intensities of bullying during and after remote learning sometimes almost reached zero. 
 
-It is clear that the incidence of school bullying has generally been decreasing over time. The original paper (@citePaper) states that COVID-19 pandemic and remote learning has caused a decrease in school bullying cases. Our data has a slight different conclusion compared to the original paper (@fig-Composite-Search-Intensity-bully). It is observed that with the sudden COVID-19 outbreak in the United States around January 2020, instances of school bullying experienced a notable surge, almost reaching global maxima in February 2020. The unexpected rise in bullying during the pandemic could be attributed to various factors, for example, individuals seeking to alleviate stress through harmful behavior to other people. Furthermore, a disturbing trend of Chinese-hate emerged during this period, due to the misguided assumptions that China was responsible for spreading the virus (@citeChineseHate). Asian students, especially Chinese ethnicity, might experience discriminatory actions, verbal abuse, or physical assaults due to this misinformation. So it most likely contributed to an increase in school bullying cases. As schools closed down in February 2020, a consequential decline in bullying cases was observed, at times nearly reaching zero. This is understandable since student interactions have declined due to remote learning. They did not have  as much opportunity or motivation to bully others as they had before.
+It is clear that the incidence of school bullying has generally been decreasing over time. The original paper (@citePaper) states that COVID-19 pandemic and remote learning has caused a decrease in school bullying cases. Our data has a slight different conclusion compared to the original paper (@fig-Composite-Search-Intensity-bully, @fig-Composite-Search-Intensity-sch, @fig-Composite-Search-Intensity-cyber). It is observed that with the sudden COVID-19 outbreak in the United States around January 2020, instances of school bullying experienced a notable surge, almost reaching global maxima in February 2020. The unexpected rise in bullying during the pandemic could be attributed to various factors, for example, individuals seeking to alleviate stress through harmful behavior to other people. Furthermore, a disturbing trend of Chinese-hate emerged during this period, due to the misguided assumptions that China was responsible for spreading the virus (@citeChineseHate). Asian students, especially Chinese ethnicity, might experience discriminatory actions, verbal abuse, or physical assaults due to this misinformation. So it most likely contributed to an increase in school bullying cases. As schools closed down in February 2020, a consequential decline in bullying cases was observed, at times nearly reaching zero. This is understandable since student interactions have declined due to remote learning. They did not have  as much opportunity or motivation to bully others as they had before.
 
 Surprisingly, the shift to remote learning during the COVID-19 pandemic did not lead to an expected increase in cyberbullying cases. Given that students spent the majority of their time on digital devices (@citeDigitalDevices), it was natural to assume that cyberbullying would increase. Instead, there was a noticeable decrease. This challenges the assumption about the relationship between online activity and cyberbullying. The reduction in personal interactions during remote learning may have played a role in diminishing students' motivations or reasons to engage in cyberbullying. Also, since students stayed at home, there would always be adult supervision, for students under 12 years old (@citeStudent), which may have regulated their behaviour. This indicates that face-to-face interactions and the environmental factors have a strong impact on the prevalence of online harassment. 
 
