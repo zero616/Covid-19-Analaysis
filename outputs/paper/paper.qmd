@@ -45,7 +45,7 @@ This paper will replicate the data that was originally collected for the paper �
 The researchers state that data from Google Trends are less likely to be subjected to potential bias, since the data are not self-reported. Moreover, the data from Google Trends represents the full population of Google search users in the United States, thus it does not have the potential issue of under-representation of a certain group.
 
 ## Data Measurements
-The measurement of bullying from Google Trends is the search intensity of keywords, which are published every month [@citePaper]. Search intensity stands for the fraction of a given area’s Google searches for a specific topic. Google Trends normalizes the search intensity numbers to get relative intensity over time and across states. The search intensity is measured on a scale of 0 to 100, where 0 represents the lowest search intensity and 100 the highest.
+The measurement of bullying from Google Trends is the search intensity of keywords, which are published every month (@citePaper). Search intensity stands for the fraction of a given area’s Google searches for a specific topic. Google Trends normalizes the search intensity numbers to get relative intensity over time and across states. The search intensity is measured on a scale of 0 to 100, where 0 represents the lowest search intensity and 100 the highest.
 
 
 ## Methodology
@@ -55,11 +55,16 @@ Some data cleaning is performed, such as renaming column names, filtering and mu
 
 ## Features
 The original dataset contained 5 variables, which are named as “dma_json_code”, “date”, “keyword”, “hits”, and “ratio”. 
-1. dma_json_code: the states of the United States
-2. date: the first day of every month from 2012. 01 to 2021. 02
+
+1. dma_json_code: the states of the United States.
+
+2. date: the first day of every month from January 2012 to February 2021.
+
 3. keyword: specific words that the people search on Google Trends that relate to bullying.
+
 4. hits: number of searchers of keywords in each month.
-5. ratio: ratio of the search intensity in Google Trend
+
+5. ratio: ratio of the search intensity in Google Trend.
 
  
 
@@ -177,6 +182,7 @@ ggplot(data = state_ratios, aes(x = fraction, y = us_state, size = num_of_search
   theme_minimal()  # Customize the theme as needed
 ```
 
+
 \newpage
 
 # Discussion {#sec-discussion}
@@ -184,7 +190,7 @@ ggplot(data = state_ratios, aes(x = fraction, y = us_state, size = num_of_search
 ## COVID-19 Effects on Bullying
 The overall bullying (@fig-Composite-Search-Intensity-bully) displays a decreasing trend over time, with a significant decline when COVID-19 pandemic emerged. The impact of COVID-19 on bullying cases results in a reduction to the lowest levels observed. The search intensities of bullying during and after remote learning sometimes almost reached zero. 
 
-It is clear that the incidence of school bullying has generally been decreasing over time. The original paper (@citePaper) states that COVID-19 pandemic and remote learning has caused a decrease in school bullying cases. Our data has a slight different conclusion compared to the original paper (@fig-Composite-Search-Intensity-bully). It is observed that with the sudden COVID-19 outbreak in the United States around January 2020, instances of school bullying experienced a notable surge, almost reaching global maxima in February 2020. The unexpected rise in bullying during the pandemic could be attributed to various factors, for example, individuals seeking to alleviate stress through harmful behavior to other people. Furthermore, a disturbing trend of Chinese-hate emerged during this period, due to the misguided assumptions that China was responsible for spreading the virus (@citeChineseHate). Asian students, especially Chinese ethnicity, might experience discriminatory actions, verbal abuse, or physical assaults due to this misinformation. So it most likely contributed to an increase in school bullying cases. As schools closed down in February 2020, a consequential decline in bullying cases was observed, at times nearly reaching zero. This is understandable since student interactions have declined due to remote learning. They did not have  as much opportunity or motivation to bully others as they had before.
+It is clear that the incidence of school bullying has generally been decreasing over time. The original paper (@citePaper) states that COVID-19 pandemic and remote learning has caused a decrease in school bullying cases. Our data has a slight different conclusion compared to the original paper (@fig-Composite-Search-Intensity-bully, @fig-Composite-Search-Intensity-sch, @fig-Composite-Search-Intensity-cyber). It is observed that with the sudden COVID-19 outbreak in the United States around January 2020, instances of school bullying experienced a notable surge, almost reaching global maxima in February 2020. The unexpected rise in bullying during the pandemic could be attributed to various factors, for example, individuals seeking to alleviate stress through harmful behavior to other people. Furthermore, a disturbing trend of Chinese-hate emerged during this period, due to the misguided assumptions that China was responsible for spreading the virus (@citeChineseHate). Asian students, especially Chinese ethnicity, might experience discriminatory actions, verbal abuse, or physical assaults due to this misinformation. So it most likely contributed to an increase in school bullying cases. As schools closed down in February 2020, a consequential decline in bullying cases was observed, at times nearly reaching zero. This is understandable since student interactions have declined due to remote learning. They did not have  as much opportunity or motivation to bully others as they had before.
 
 Surprisingly, the shift to remote learning during the COVID-19 pandemic did not lead to an expected increase in cyberbullying cases. Given that students spent the majority of their time on digital devices (@citeDigitalDevices), it was natural to assume that cyberbullying would increase. Instead, there was a noticeable decrease. This challenges the assumption about the relationship between online activity and cyberbullying. The reduction in personal interactions during remote learning may have played a role in diminishing students' motivations or reasons to engage in cyberbullying. Also, since students stayed at home, there would always be adult supervision, for students under 12 years old (@citeStudent), which may have regulated their behaviour. This indicates that face-to-face interactions and the environmental factors have a strong impact on the prevalence of online harassment. 
 
