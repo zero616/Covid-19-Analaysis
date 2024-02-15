@@ -5,6 +5,7 @@
 The study utilized Google Trend data to analyze the impact of COVID-19 on bullying patterns in the United States, revealing a significant decrease in searches related to bullying and cyberbullying during the shift to online learning in the spring of 2020.
 
 ## File Structure
+```
 │  .gitignore
 │  .RData
 │  .Rhistory
@@ -69,7 +70,7 @@ The study utilized Google Trend data to analyze the impact of COVID-19 on bullyi
         02-data_cleaning.R
         03-test_data.R
         04-model.R
-
+```
 ## Data Source
 
 The data set used in this analysis was obtained from the Google Tender and "The COVID-19 Pandemic Disrupted Both School Bullying and Cyberbullying". It includes information such as date, state, hits, and bully type.
