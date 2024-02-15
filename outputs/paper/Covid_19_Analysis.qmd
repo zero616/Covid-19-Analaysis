@@ -50,7 +50,7 @@ The measurement of bullying from Google Trends is the search intensity of keywor
 
 ## Methodology
 Since it is difficult to observe through 16683 (5661*3) rows with 5 variables, this report will only observe and analyze through specific aspects. The original dataset contains information through all the 51 states in the US. This paper focuses only on data and trends for three states, which are “US-LA”, “US-NY” and “US-NJ” (Louisiana, New York, and New Jersey respectively).
-Some data cleaning is performed, such as renaming column names, filtering and mutating the column, etc. The cleaned data will be analyzed and performed using R (@citeR) with `tidyverse` (@citeTidyverse), `dplyr` (@citeDplyr), `ggplot2` (@citeGgplot2). 
+Some data cleaning is performed, such as renaming column names, filtering and mutating the column, etc. The cleaned data will be analyzed and performed using R (@citeR) with `tidyverse` (@citeTidyverse), `dplyr` (@citeDplyr), `ggplot2` (@citeGgplot2),`knitr`(@R-knitr),`janitor`(@R-janitor). 
 
 
 ## Features
@@ -87,13 +87,11 @@ sample_data <- head(bully_clean_data, 6)
 # Results {#sec-result}
 ```{r}
 #| label: tbl-Search-Intensity
-#| tbl-cap:  Table-of-Search-Intensity by School Bullying and Cyber Bullying
+#| tbl-cap:  Sample Table for Search Intensity by School Bullying and Cyber Bullying (2012-2021)
 #| warning: false
 #| message: false
 #| echo: false
-knitr::kable(head(bully_clean_data),'markdown',col.names = c("US State", "Date", "Number of Searches", "Bully Type"),align = 'c',
-                      
-                      caption = "Sample Table for Search Intensity by School Bullying and Cyber Bullying (2012-2021)")
+knitr::kable(head(bully_clean_data),'markdown',col.names = c("US State", "Date", "Number of Searches", "Bully Type"),align = 'c')
 ```
 
 ```{r}
@@ -237,12 +235,14 @@ The study analyzes the bullying situation before, during, and after COVID-19, sp
 
 ## Future Steps
 Future research should focus on gathering more inclusive and representative data by increasing the volume of data entries and mitigating bias in data collection. 
-Beyond simply collecting data about bullying, researchers should investigate the mental well-being of students affected by bullying.By investigating their mental well-being, researchers can arrive at conclusions if the mental health support system is effective for students in the school. It is important to ensure that individuals who experience bullying have access to the necessary resources and support. This makes sure that the research not only analyzes the situation, but also contributes to actionable improvements for those affected.
+Beyond simply collecting data about bullying, researchers should investigate the mental well-being of students affected by bullying. By investigating their mental well-being, researchers can arrive at conclusions if the mental health support system is effective for students in the school. It is important to ensure that individuals who experience bullying have access to the necessary resources and support. This makes sure that the research not only analyzes the situation, but also contributes to actionable improvements for those affected.
 
 
 \newpage
 
 
 # References
+
+
 
 
