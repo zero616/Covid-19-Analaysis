@@ -82,15 +82,20 @@ Talk way more about it.
 
 
 # Results
+```{r}
+#| label: tbl-Search-Intensity
+#| tbl-cap:  Table-of-Search-Intensity by School Bullying and Cyber Bullying
+#| warning: false
+#| message: false
+#| echo: false
+knitr::kable(head(bully_clean_data),'markdown',col.names = c("US State", "Date", "Number of Searches", "Bully Type"),align = 'c',
+                      
+                      caption = "Sample Table for Search Intensity by School Bullying and Cyber Bullying (2012-2021)")
+```
 
 ```{r}
-<<<<<<< HEAD
-#| label: fig-Composite-Search-Intensity 
-#| fig-cap: Composite-Search-Intensity both type
-=======
 #| label: fig-Composite-Search-Intensity-bully
 #| fig-cap: Composite-Search-Intensity by School Bullying and Cyber Bullying
->>>>>>> 72b39ae77c049671a5478d45d66442f4880ee284
 #| warning: false
 #| message: false
 #| echo: false
@@ -115,6 +120,7 @@ ggplot(bully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Tota
   geom_line() +
   xlab("Date") +
   ylab("Search Intensity") +
+   labs(title = "Composite-Search-Intensity by School and Cyber Bullying")+
   geom_vline(xintercept = as.numeric(as.Date("2020-02-01")), 
              linetype = "dashed", color = "red")+
    scale_x_date(breaks = seq(as.Date("2012-01-01"), as.Date("2021-03-01"), by = "6 months"),
@@ -123,17 +129,6 @@ ggplot(bully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Tota
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-```{r}
-#| label: fig-Composite-Search-Intensity-sch
-#| fig-cap: Composite-Search-Intensity by School Bullying
-#| warning: false
-#| message: false
-#| echo: false
-
-
-
-
-```
 
 ```{r}
 #| label: fig-Composite-Search-Intensity-school
@@ -146,6 +141,7 @@ ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = T
   geom_line() +
   xlab("Date") +
   ylab("Search Intensity") +
+   labs(title = "Composite-Search-Intensity by School Bullying")+
   geom_vline(xintercept = as.numeric(as.Date("2020-02-01")), 
              linetype = "dashed", color = "red")+
   scale_x_date(breaks = seq(as.Date("2012-01-01"), as.Date("2021-03-01"), by = "6 months"),
@@ -154,15 +150,6 @@ ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = T
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-```{r}
-#| label: fig-Composite-Search-Intensity-cyber
-#| fig-cap: Composite-Search-Intensity by Cyber Bullying
-#| warning: false
-#| message: false
-#| echo: false
-
-
-```
 
 ```{r}
 #| label: fig-Composite-Search-Intensity-cyber
@@ -175,6 +162,7 @@ ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y =
   geom_line() +
   xlab("Date") +
   ylab("Search Intensity") +
+     labs(title = "Composite-Search-Intensity by Cyber Bullying")+
   geom_vline(xintercept = as.numeric(as.Date("2020-02-01")), 
              linetype = "dashed", color = "red")+
   scale_x_date(breaks = seq(as.Date("2012-01-01"), as.Date("2021-03-01"), by = "6 months"),
@@ -182,19 +170,21 @@ ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y =
                limits = c(as.Date("2012-01-01"), as.Date("2021-03-01")))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
-<<<<<<< HEAD
 
- The data presented in @fig-Composite-Search-Intensity provides valuable insights into the trends of searches from 2012 to 2021. The observed pattern, with peaks of bullying during the first month of school and troughs in the summer, suggests a recurring seasonal variation in the interest or concern about bullying . This cyclic behavior aligns with the typical school calendar, highlighting a potential correlation between the academic year's start and increased awareness or experiences related to bullying.
+The dataset represented by the table labeled @tbl-Search-Intensity furnishes a comprehensive overview of the cumulative number of searches related to bullying over the specified time frame. This table is a valuable resource for conducting a nuanced analysis, as it delineates key variables crucial for understanding the extent of harm experienced by individuals affected by bullying. The primary variables include time, state, the total number of searches, and the categorization of bullying incidents. The categorization of bullying incidents into different categories provides a nuanced understanding of the multifaceted nature of bullying. By disaggregating searches based on bullying categories, such as traditional bullying and cyberbullying, analysts can discern which forms of bullying are more prevalent or garner more attention during specific time periods and in particular states.
+
+In essence, the @tbl-Search-Intensity table serves as a rich repository of information, offering a multifaceted perspective on the harm suffered by individuals affected by bullying. Researchers can leverage this dataset to uncover temporal trends, regional variations, and category-specific nuances, ultimately contributing to a more comprehensive and targeted approach in addressing the complex issue of bullying.
+
+The data presented in @fig-Composite-Search-Intensity-bully provides valuable insights into the trends of searches from 2012 to 2021. The observed pattern, with peaks of bullying during the first month of school and troughs in the summer, suggests a recurring seasonal variation in the interest or concern about bullying . This cyclic behavior aligns with the typical school calendar, highlighting a potential correlation between the academic year's start and increased awareness or experiences related to bullying.
 
 The introduction of the red dotted line indicating the onset of the pandemic adds an intriguing layer to the analysis. It appears that the traditional pattern of increased bullying searches during the initial school month was disrupted by the pandemic.(@fig-Composite-Search-Intensity-school ) With the shift to online learning, there was a noticeable departure from the usual surge in bullying-related searches. This alteration in behavior might be attributed to changes in the educational environment, as students and educators adapted to new modes of interaction.
 
 Surprisingly, despite the overall decrease in bullying searches during the pandemic, cyberbullying searches saw a notable rebound.(@fig-Composite-Search-Intensity-cyber ) This suggests that while traditional forms of bullying may have diminished due to reduced in-person interactions, the online realm became a focal point for bullying concerns. The fact that cyberbullying searches did not rebound significantly may indicate that, even in the digital space, the overall awareness or concerns related to bullying remained somewhat subdued during this period.
 
 The findings underscore the complex interplay between societal factors, educational settings, and the digital landscape in shaping the dynamics of bullying searches. Future research could delve deeper into the specific nuances of cyberbullying during the pandemic, exploring how the online learning environment may have influenced the prevalence and perception of such incidents. Additionally, understanding the lasting impact of these changes on bullying awareness and intervention efforts is crucial for developing effective strategies to address this issue in evolving educational landscapes.
-=======
-@fig-Composite-Search-Intensity-bully, @fig-Composite-Search-Intensity-sch, @fig-Composite-Search-Intensity-cyber shows the number of searches for bullying
-(by category) starting in 2012 and ending in 2021. The graph visually shows how bullying searches relate to time. From this we can see every year during the first month of school, the number of searches for bullying rises to a peak, and then quickly dwindles to a trough in the summer. Depending on where the red dotted line is, that's when the pandemic started. Affected by online learning, the search volume for bullying broke the pattern of previous years and remained at a low level. Only searches for cyberbullying rebounded, but not by much.
->>>>>>> 72b39ae77c049671a5478d45d66442f4880ee284
+
+The two-dimensional analysis of bullying searches, as depicted in @fig-Number-of-Searches-represented-by-point-size, offers valuable insights into the regional variations and the overall prevalence of bullying concerns. By juxtaposing the number of bullying searches in specific states with the nationwide search volume, a nuanced understanding of the relative intensity of bullying-related issues emerges. The substantial discrepancy between the search volumes for bullying in New York State and New Jersey, with New York registering nearly twice the number of searches, underscores the regional disparities in the perception or awareness of bullying. This contrast could be influenced by a myriad of factors, such as differences in population density, educational policies, cultural dynamics, or varying levels of community engagement in anti-bullying initiatives. The elevated search volume in New York may suggest a higher incidence of bullying incidents or a greater public awareness and sensitivity to the issue. This heightened attention could be attributed to proactive anti-bullying campaigns, robust educational programs, or a more open dialogue surrounding the topic within the state. Conversely, the comparatively lower search volume in New Jersey may indicate a different set of contextual factors influencing the perception and reporting of bullying. The two-dimensional analysis not only provides insights into state-level variations but also allows for a comparison with the nationwide search volume. Understanding how specific states compare to the national average in terms of bullying searches can highlight regions where the issue is particularly salient or, conversely, where it may be relatively underreported or less prevalent. The two-dimensional analysis of bullying searches based on the number of state and nationwide searches reveals a nuanced landscape of regional variations in the perception and awareness of bullying. The disparities observed in Figure 4 provide a starting point for further investigations and interventions to address the complex and multifaceted nature of bullying at both the state and national levels.
+
 
 
 ```{r}
