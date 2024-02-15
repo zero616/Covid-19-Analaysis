@@ -34,7 +34,7 @@ With pandemic outbreaks, most schools in the United States turned to online teac
 
 Bullying in schools is pervasive and can have significant social costs. In the US, 1 in 5 students ages 12-18 has been bullied during the school year, and approximately 160,000 teens have skipped school because of bullying [@citeFacts]. The COVID-19 pandemic has fundamentally changed the context of bullying dynamics. With the shift to online learning across the United States in March 2020, there is a sudden decrease in in-person communication and interaction while the use of technology increases dramatically. In fact, prior COVID-19 research has suggested that the higher the frequency of the Internet, the more incidents of cyberbullying and cyber-victimization reported by youth [@citeResearch]. However, in this paper, we conclude that both school bullying and cyberbullying have been decreased during the pandemic by analyzing a long panel of publicly available Google Trends online search data. These results provide insights into how schools can reduce bullying in a post-pandemic world and highlight a possible mechanism by which COVID-19 may have a differential impact on broader mental health.
 
-
+This paper is structured as follows. In Section 2, the sources of the data sets in the original paper, the methodologies used to collect them, and data features are explained. In Section 3, a replication of the original study is conducted to analyze its findings and produce visual representations that enhances the analysis. In Section 4, discussions are conducted based on the findings, which addresses the influence of COVID-19 pandemic on bullying, the cyclic pattern of bullying, regional pattern of bullying, limitation and future steps of this study. 
 
 
 # Data {#sec-data}
@@ -43,6 +43,10 @@ Bullying in schools is pervasive and can have significant social costs. In the U
 This paper will replicate the data that was originally collected for the paper “The COVID-19 Pandemic Disrupted Both School Bullying and Cyberbullying” by [citation]. Using the online platform “Google Trends”, which provide monthly internet search behavior for a given term or topic by states over a period of time, they collected three types of bullying data (“School Bullying”, “Cyberbullying”, and “Bullying”) before, during, and after the pandemic COVID-19 from January 2012 to February 2021. They filtered the data to keep male and female individuals between ages of 5 and 17 (roughly the k-12 schooling population). Each dataset contains 5661 rows and 5 variables, each indicating a detailed summary of the month and position of the search, search keyword, number of searches and the ratio.
 
 The researchers state that data from Google Trends are less likely to be subjected to potential bias, since the data are not self-reported. Moreover, the data from Google Trends represents the full population of Google search users in the United States, thus it does not have the potential issue of under-representation of a certain group.
+
+## Data Measurements
+The measurement of bullying from Google Trends is the search intensity of keywords, which are published every month [@citePaper]. Search intensity stands for the fraction of a given area’s Google searches for a specific topic. Google Trends normalizes the search intensity numbers to get relative intensity over time and across states. The search intensity is measured on a scale of 0 to 100, where 0 represents the lowest search intensity and 100 the highest.
+
 
 ## Methodology
 Since it is difficult to observe through 16683 (5661*3) rows with 5 variables, this report will only observe and analyze through specific aspects. The original dataset contains information through all the 51 states in the US. This paper focuses only on data and trends for three states, which are “US-LA”, “US-NY” and “US-NJ” (Louisiana, New York, and New Jersey respectively).
@@ -72,10 +76,6 @@ pop_2020_clean<- read.csv("../../outputs/data/pop_2020_clean.csv")
 state_ratios<- read.csv("../../outputs/data/state_ratios.csv")
 sample_data <- head(bully_clean_data, 6)
 ```
-
-
-
-Talk way more about it. 
 
 
 
