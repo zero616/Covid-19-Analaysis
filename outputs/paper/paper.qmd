@@ -59,7 +59,7 @@ The original dataset contained 5 variables, which are named as â€œdma_json_codeâ
 2. date: the first day of every month from 2012. 01 to 2021. 02
 3. keyword: specific words that the people search on Google Trends that relate to bullying.
 4. hits: number of searchers of keywords in each month.
-5. ratio: 
+5. ratio: ratio of the search intensity in Google Trend
 
  
 
