@@ -183,7 +183,14 @@ As the semester begins, students need to transition from a relaxed vacation stat
 
 Furthermore, there is obviously a clear positive correlation between in-person interactions and incidents of bullying. During the semesters, students engage in regular face-to-face interactions, potentially creating opportunities for bullying to occur. During summer vacation and the Christmas holiday, students typically limit their interactions to family members, with occasional exceptions when hanging out with friends. This reduction in direct, in-person interactions tends to reduce social pressures. Some individuals may feel the need to show dominance within the school by performing bullying behaviors in the presence of others [@citeOthers]. However, during vacations, the reduced personal interaction may reduce their need for such assertive actions, resulting in a decrease in bullying activities.
 
-## Third discussion point
+## Regional Dynamics in Bullying Patterns
+The bullying searches show some regional variations, with New York state having the highest number of bullying searches. This could be due to New York's large population and the heightened personal physical interactions. The busy and dynamic environment of New York may contribute to increased stress for everyone, from various sources such as work, school, societal judgments, and economic pressures. All these pressures may induce bullying behaviours to happen. Also, the city's frequent occurrences of violent incidents might also potentially influence some students to engage in bullying behaviors.
+
+On the other hand, states like New Jersey (NJ) and Louisiana (LA) report fewer bullying cases. These states may have less intense environments, potentially resulting in decreased stress, hence less bullying to happen.
+
+It is apparent that different regions have different effects on bullying. Considering the physical environment students find themselves in, it can significantly impact their decisions to engage in bullying or not. External factors have strong influences on students’ judgments and behaviors. Therefore, it is important to have different measures to prevent bullying in different states to better address this issue.
+
+
 
 ## Limtations
 ### Limited Comprehensive Representation
