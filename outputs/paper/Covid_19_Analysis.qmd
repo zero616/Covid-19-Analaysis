@@ -83,8 +83,18 @@ state_ratios<- read.csv("../../outputs/data/state_ratios.csv")
 sample_data <- head(bully_clean_data, 6)
 ```
 
-
+\newpage
 # Results {#sec-result}
+```{r}
+#| label: tbl-Search-Intensity
+#| tbl-cap:  Table-of-Search-Intensity by School Bullying and Cyber Bullying
+#| warning: false
+#| message: false
+#| echo: false
+knitr::kable(head(bully_clean_data),'markdown',col.names = c("US State", "Date", "Number of Searches", "Bully Type"),align = 'c',
+                      
+                      caption = "Sample Table for Search Intensity by School Bullying and Cyber Bullying (2012-2021)")
+```
 
 ```{r}
 #| label: fig-Composite-Search-Intensity-bully
@@ -168,12 +178,8 @@ Surprisingly, despite the overall decrease in bullying searches during the pande
 
 The findings underscore the complex interplay between societal factors, educational settings, and the digital landscape in shaping the dynamics of bullying searches. Future research could delve deeper into the specific nuances of cyberbullying during the pandemic, exploring how the online learning environment may have influenced the prevalence and perception of such incidents. Additionally, understanding the lasting impact of these changes on bullying awareness and intervention efforts is crucial for developing effective strategies to address this issue in evolving educational landscapes.
 
-<<<<<<< HEAD
 The two-dimensional analysis of bullying searches, as depicted in @fig-Number-of-Searches-represented-by-point-size, offers some insights into the regional variations and the overall prevalence of bullying concerns. By juxtaposing the number of bullying searches in specific states with the nationwide search volume, a nuanced understanding of the relative intensity of bullying-related issues emerges. The substantial discrepancy between the search volumes for bullying in New York State and New Jersey, with New York registering nearly twice the number of searches. The two-dimensional analysis not only provides insights into state-level variations but also allows for a comparison with the nationwide search volume. The two-dimensional analysis of bullying searches based on the number of state and nationwide searches reveals a nuanced landscape of regional variations in the perception and awareness of bullying. 
 
-
-=======
->>>>>>> 11cc73f0aefca5724f2ad120bd537c9b4ae9f429
 
 ```{r}
 #| label: fig-Number-of-Searches-represented-by-point-size
