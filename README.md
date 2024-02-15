@@ -79,7 +79,6 @@ The data set used in this analysis was obtained from the Google Tender and "The 
 To run the analysis, you need R and the following R packages:
 
 - janitor
-- knitr
 - dplyr
 - ggplot2
 - tidyverse
@@ -87,7 +86,7 @@ To run the analysis, you need R and the following R packages:
 You can install these packages using the following R code:
 
 ```{r}
-install.packages(c("janitor", "knitr", "dplyr", "ggplot2", "tidyverse"))
+install.packages(c("janitor", "dplyr", "ggplot2", "tidyverse"))
 ```
 # Statement on LLM Usage
 
