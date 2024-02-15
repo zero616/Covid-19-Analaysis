@@ -9,10 +9,11 @@ The study utilized Google Trend data to analyze the impact of COVID-19 on bullyi
 │  .RData
 │  .Rhistory
 │  1.txt
+│  2.txt
 │  Covid-19-Analaysis.Rproj
 │  LICENSE
 │  README.md
-│
+│  
 ├─inputs
 │  ├─data
 │  │      2021_03_30_monthly_2012_2021_state_bullying_topic.csv
@@ -27,19 +28,19 @@ The study utilized Google Trend data to analyze the impact of COVID-19 on bullyi
 │  │      US_NJ_Population_2020.csv
 │  │      US_NY_Population_2019.csv
 │  │      US_NY_Population_2020.csv
-│  │
+│  │      
 │  ├─literature
 │  │      Alexander-ProjectOfStateLevel.pdf
-│  │
+│  │      
 │  ├─llm
 │  │      usage.txt
-│  │
+│  │      
 │  └─sketches
 │          simulate_dataset_and_graph.jpg
-│
+│          
 ├─outputs
 │  │  paper.qmd
-│  │
+│  │  
 │  ├─data
 │  │      bully_clean_data.csv
 │  │      LA_pop_2019_clean.csv
@@ -53,15 +54,15 @@ The study utilized Google Trend data to analyze the impact of COVID-19 on bullyi
 │  │      pop_2020_clean.csv
 │  │      pop_2020_comb.csv
 │  │      state_ratios.csv
-│  │
+│  │      
 │  ├─models
 │  │      first_model.rds
-│  │
+│  │      
 │  └─paper
 │          paper.pdf
 │          paper.qmd
 │          references.bib
-│
+│          
 └─scripts
         00-simulate_data.R
         01-download_data.R
