@@ -135,17 +135,27 @@ ggplot(data = state_ratios, aes(x = fraction, y = us_state, size = num_of_search
 
 # Discussion
 
-## First discussion point {#sec-first-point}
+## COVID-19 Effects on Bullying
+The overall bullying @fig-Composite-Search-Intensity displays a decreasing trend over time, with a significant decline when COVID-19 pandemic emerged. The impact of COVID-19 on bullying cases results in a reduction to the lowest levels observed. The search intensities of bullying during and after remote learning sometimes almost reached zero. 
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+It is clear that the incidence of school bullying has generally been decreasing over time. The original paper [cite] states that COVID-19 pandemic and remote learning has caused a decrease in school bullying cases. Our data has a slight different conclusion compared to the original paper[cite graph]. It is observed that with the sudden COVID-19 outbreak in the United States around January 2020, instances of school bullying experienced a notable surge, almost reaching global maxima in February 2020. The unexpected rise in bullying during the pandemic could be attributed to various factors, for example, individuals seeking to alleviate stress through harmful behavior to other people. Furthermore, a disturbing trend of Chinese-hate emerged during this period, due to the misguided assumptions that China was responsible for spreading the virus [@citeChineseHate]. Asian students, especially Chinese ethnicity, might experience discriminatory actions, verbal abuse, or physical assaults due to this misinformation. So it most likely contributed to an increase in school bullying cases. As schools closed down in February 2020, a consequential decline in bullying cases was observed, at times nearly reaching zero. This is understandable since student interactions have declined due to remote learning. 
 
-## Second discussion point
+Surprisingly, the shift to remote learning during the COVID-19 pandemic did not lead to an expected increase in cyberbullying cases. Given that students spent the majority of their time on digital devices [@citeDigitalDevices], it was natural to assume that cyberbullying would increase. Instead, there was a noticeable decrease. This challenges the assumption about the relationship between online activity and cyberbullying. The reduction in personal interactions during remote learning may have played a role in diminishing students' motivations or reasons to engage in cyberbullying. Also, since students stayed at home, there would always be adult supervision, for students under 12 years old [@citeStudent], which may have regulated their behaviour. This indicates that face-to-face interactions and the environmental factors have a strong impact on the prevalence of online harassment. 
+
+## Cyclic Pattern of Bullying During Semesters and Vacations
+In all three types of bullying (school bullying, cyber-bullying, and bullying), a cyclic pattern can be observed. It is clear that the data peaks during the months of January and September, which are the commencement of school terms, followed by a gradual reduction in bullying cases as the semester progresses. The local trough occurs during the summer vacation when students are away from school. It can be inferred that there might be a positive correlation between academic stress and bullying and between in-person interactions and bullying [@citeCorrelation]. 
+
+As the semester begins, students need to transition from a relaxed vacation state to a rigorous school learning state. As they navigate the challenges of academic demands, they may experience stress and peer pressure from many sources [@citePressure]. This will urge students to release their emotions and stress by bullying other students. It is important for teachers and schools to see this trend and understand its implications. Effective strategies for mental health support should be carried out to deal with this, in order to reduce bullying.
+
+Furthermore, there is obviously a clear positive correlation between in-person interactions and incidents of bullying. During the semesters, students engage in regular face-to-face interactions, potentially creating opportunities for bullying to occur. During summer vacation and the Christmas holiday, students typically limit their interactions to family members, with occasional exceptions when hanging out with friends. This reduction in direct, in-person interactions tends to reduce social pressures. Some individuals may feel the need to show dominance within the school by performing bullying behaviors in the presence of others [@citeOthers]. However, during vacations, the reduced personal interaction may reduce their need for such assertive actions, resulting in a decrease in bullying activities.
 
 ## Third discussion point
 
-## Weaknesses and next steps
+## Limtations
+### 
 
-Weaknesses and next steps should also be included.
+
+## Future Steps
 
 \newpage
 
