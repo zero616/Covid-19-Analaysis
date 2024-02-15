@@ -2,9 +2,7 @@
 
 ## Overview
 
-This repo provides students with a foundation for their own projects associated with *Telling Stories with Data*. You do not need every aspect for every paper and you should delete aspects that you do not need.
-
-To use this folder, click the green "Code" button", then "Download ZIP". Move the downloaded folder to where you want to work on your own computer, and then modify it to suit.
+Each year in the United States, about one in five teens is bullied at school. When COVID-19 interferes with in-person interactions, we use Internet search data from Google Trend to track bullying patterns. We found an overall downward trend in searches about bullying and cyberbullying in schools as schools shift to online learning in the spring of 2020. This finding debunks the idea that cyberbullying increases as students become more exposed to technology, explaining the impact of epidemics on student mental health and providing ideas for future responses to cyber and school bullying.
 
 ## File Structure
 
