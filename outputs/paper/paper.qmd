@@ -80,8 +80,8 @@ Talk way more about it.
 # Results
 
 ```{r}
-#| label: fig-Composite-Search-Intensity
-#| fig-cap: Composite-Search-Intensity by type
+#| label: fig-Composite-Search-Intensity 
+#| fig-cap: Composite-Search-Intensity both type
 #| warning: false
 #| message: false
 #| echo: false
@@ -118,6 +118,17 @@ ggplot(bully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Tota
                limits = c(as.Date("2012-01-01"), as.Date("2021-03-01")))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+
+
+
+```
+
+```{r}
+#| label: fig-Composite-Search-Intensity-school
+#| fig-cap: Composite-Search-Intensity school type
+#| warning: false
+#| message: false
+#| echo: false
 # plot from "school bullying" data
 ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Total, group = 1)) +geom_point()+
   geom_line() +
@@ -131,6 +142,15 @@ ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = T
                limits = c(as.Date("2012-01-01"), as.Date("2021-03-01")))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+
+```
+
+```{r}
+#| label: fig-Composite-Search-Intensity-cyber
+#| fig-cap: Composite-Search-Intensity cyber type
+#| warning: false
+#| message: false
+#| echo: false
 # plot from "cyberbullying" data
 ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Total, group = 1)) +geom_point()+
   geom_line() +
@@ -143,11 +163,15 @@ ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y =
                date_labels = "%Y-%m", 
                limits = c(as.Date("2012-01-01"), as.Date("2021-03-01")))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-
 ```
-@fig-Composite-Search-Intensity shows the number of searches for bullying
-(by category) starting in 2012 and ending in 2021. The graph visually shows how bullying searches relate to time. From this we can see every year during the first month of school, the number of searches for bullying rises to a peak, and then quickly dwindles to a trough in the summer. Depending on where the red dotted line is, that's when the pandemic started. Affected by online learning, the search volume for bullying broke the pattern of previous years and remained at a low level. Only searches for cyberbullying rebounded, but not by much.
+
+ The data presented in @fig-Composite-Search-Intensity provides valuable insights into the trends of searches from 2012 to 2021. The observed pattern, with peaks of bullying during the first month of school and troughs in the summer, suggests a recurring seasonal variation in the interest or concern about bullying . This cyclic behavior aligns with the typical school calendar, highlighting a potential correlation between the academic year's start and increased awareness or experiences related to bullying.
+
+The introduction of the red dotted line indicating the onset of the pandemic adds an intriguing layer to the analysis. It appears that the traditional pattern of increased bullying searches during the initial school month was disrupted by the pandemic.(@fig-Composite-Search-Intensity-school ) With the shift to online learning, there was a noticeable departure from the usual surge in bullying-related searches. This alteration in behavior might be attributed to changes in the educational environment, as students and educators adapted to new modes of interaction.
+
+Surprisingly, despite the overall decrease in bullying searches during the pandemic, cyberbullying searches saw a notable rebound.(@fig-Composite-Search-Intensity-cyber ) This suggests that while traditional forms of bullying may have diminished due to reduced in-person interactions, the online realm became a focal point for bullying concerns. The fact that cyberbullying searches did not rebound significantly may indicate that, even in the digital space, the overall awareness or concerns related to bullying remained somewhat subdued during this period.
+
+The findings underscore the complex interplay between societal factors, educational settings, and the digital landscape in shaping the dynamics of bullying searches. Future research could delve deeper into the specific nuances of cyberbullying during the pandemic, exploring how the online learning environment may have influenced the prevalence and perception of such incidents. Additionally, understanding the lasting impact of these changes on bullying awareness and intervention efforts is crucial for developing effective strategies to address this issue in evolving educational landscapes.
 
 
 ```{r}
