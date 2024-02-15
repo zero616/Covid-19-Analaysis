@@ -4,7 +4,7 @@ author:
   - Mary Cheng
   - Shipeng Zhang
   - Yimiao Yuan
-thanks: "Code and data are available at: https://github.com/zero616/Covid-19-Analaysis.git."
+thanks: "Code and data are available at: https://github.com/zero616/Covid-19-Analaysis.git. DOI of replication is at:http://dx.doi.org/10.1257/aeri.20210456"
 date: today
 date-format: long
 abstract: "Each year in the United States, about one in five teens is bullied at school. When COVID-19 interferes with in-person interactions, we use Internet search data from Google Trend to track bullying patterns. We found an overall downward trend in searches about bullying and cyberbullying in schools as schools shift to online learning in the spring of 2020. This finding debunks the idea that cyberbullying increases as students become more exposed to technology, explaining the impact of epidemics on student mental health and providing ideas for future responses to cyber and school bullying."
