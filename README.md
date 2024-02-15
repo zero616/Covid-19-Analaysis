@@ -1,17 +1,28 @@
-# Starter folder
+# COVID-19 Pandemic Influence on K1-12 Student Bullying Situation
 
 ## Overview
 
-Each year in the United States, about one in five teens is bullied at school. When COVID-19 interferes with in-person interactions, we use Internet search data from Google Trend to track bullying patterns. We found an overall downward trend in searches about bullying and cyberbullying in schools as schools shift to online learning in the spring of 2020. This finding debunks the idea that cyberbullying increases as students become more exposed to technology, explaining the impact of epidemics on student mental health and providing ideas for future responses to cyber and school bullying.
+The study utilized Google Trend data to analyze the impact of COVID-19 on bullying patterns in the United States, revealing a significant decrease in searches related to bullying and cyberbullying during the shift to online learning in the spring of 2020.
 
-## File Structure
+## Data Source
 
-The repo is structured as:
+The data set used in this analysis was obtained from the Google Tender and "The COVID-19 Pandemic Disrupted Both School Bullying and Cyberbullying". It includes information such as date, state, hits, and bully type.
 
--   `input/data` contains the data sources used in analysis including the raw data.
--   `outputs/data` contains the cleaned dataset that was constructed.
--   `outputs/paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
--   `scripts` contains the R scripts used to simulate, download and clean data.
+## Installation
 
-## LLM Usage
-No LLM used in this project.
+To run the analysis, you need R and the following R packages:
+
+- janitor
+- knitr
+- dplyr
+- ggplot2
+- tidyverse
+
+You can install these packages using the following R code:
+
+```{r}
+install.packages(c("janitor", "knitr", "dplyr", "ggplot2", "tidyverse"))
+```
+# Statement on LLM Usage
+
+This project does not make use of any Language Model (LLM) in its analysis, code, or documentation.
