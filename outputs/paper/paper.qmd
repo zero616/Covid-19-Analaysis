@@ -34,13 +34,13 @@ With pandemic outbreaks, most schools in the United States turned to online teac
 
 Bullying in schools is pervasive and can have significant social costs. In the US, 1 in 5 students ages 12-18 has been bullied during the school year, and approximately 160,000 teens have skipped school because of bullying [@citeFacts]. The COVID-19 pandemic has fundamentally changed the context of bullying dynamics. With the shift to online learning across the United States in March 2020, there is a sudden decrease in in-person communication and interaction while the use of technology increases dramatically. In fact, prior COVID-19 research has suggested that the higher the frequency of the Internet, the more incidents of cyberbullying and cyber-victimization reported by youth [@citeResearch]. However, in this paper, we conclude that both school bullying and cyberbullying have been decreased during the pandemic by analyzing a long panel of publicly available Google Trends online search data. These results provide insights into how schools can reduce bullying in a post-pandemic world and highlight a possible mechanism by which COVID-19 may have a differential impact on broader mental health.
 
-
+This paper is structured as follows. In @sec-data, the sources of the data sets in the original paper, the methodologies used to collect them, and data features are explained. In @sec-result, a replication of the original study is conducted to analyze its findings and produce visual representations that enhances the analysis. In @sec-discussion, discussions are conducted based on the findings, which addresses the influence of COVID-19 pandemic on bullying, the cyclic pattern of bullying, regional pattern of bullying, limitation and future steps of this study. 
 
 
 # Data {#sec-data}
 
 ## Data Source
-This paper will replicate the data that was originally collected for the paper “The COVID-19 Pandemic Disrupted Both School Bullying and Cyberbullying” by [citation]. Using the online platform “Google Trends”, which provide monthly internet search behavior for a given term or topic by states over a period of time, they collected three types of bullying data (“School Bullying”, “Cyberbullying”, and “Bullying”) before, during, and after the pandemic COVID-19 from January 2012 to February 2021. They filtered the data to keep male and female individuals between ages of 5 and 17 (roughly the k-12 schooling population). Each dataset contains 5661 rows and 5 variables, each indicating a detailed summary of the month and position of the search, search keyword, number of searches and the ratio.
+This paper will replicate the data that was originally collected for the paper “The COVID-19 Pandemic Disrupted Both School Bullying and Cyberbullying” by @citePaper. Using the online platform “Google Trends”, which provide monthly internet search behavior for a given term or topic by states over a period of time, they collected three types of bullying data (“School Bullying”, “Cyberbullying”, and “Bullying”) before, during, and after the pandemic COVID-19 from January 2012 to February 2021. They filtered the data to keep male and female individuals between ages of 5 and 17 (roughly the k-12 schooling population). Each dataset contains 5661 rows and 5 variables, each indicating a detailed summary of the month and position of the search, search keyword, number of searches and the ratio.
 
 The researchers state that data from Google Trends are less likely to be subjected to potential bias, since the data are not self-reported. Moreover, the data from Google Trends represents the full population of Google search users in the United States, thus it does not have the potential issue of under-representation of a certain group.
 
@@ -63,6 +63,7 @@ The original dataset contained 5 variables, which are named as “dma_json_code�
 #| warning: false
 #| message: false
 #| echo: false
+
 # import cleaned data
 file_path <- "../../outputs/data/bully_clean_data.csv"
 bully_clean_data <- read.csv(file_path)
@@ -81,16 +82,11 @@ Talk way more about it.
 
 
 
-# Results
+# Results {#sec-result}
 
 ```{r}
-<<<<<<< HEAD
-#| label: fig-Composite-Search-Intensity 
-#| fig-cap: Composite-Search-Intensity both type
-=======
 #| label: fig-Composite-Search-Intensity-bully
 #| fig-cap: Composite-Search-Intensity by School Bullying and Cyber Bullying
->>>>>>> 72b39ae77c049671a5478d45d66442f4880ee284
 #| warning: false
 #| message: false
 #| echo: false
@@ -129,18 +125,6 @@ ggplot(bully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Tota
 #| warning: false
 #| message: false
 #| echo: false
-
-
-
-
-```
-
-```{r}
-#| label: fig-Composite-Search-Intensity-school
-#| fig-cap: Composite-Search-Intensity school type
-#| warning: false
-#| message: false
-#| echo: false
 # plot from "school bullying" data
 ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Total, group = 1)) +geom_point()+
   geom_line() +
@@ -161,15 +145,6 @@ ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = T
 #| message: false
 #| echo: false
 
-
-```
-
-```{r}
-#| label: fig-Composite-Search-Intensity-cyber
-#| fig-cap: Composite-Search-Intensity cyber type
-#| warning: false
-#| message: false
-#| echo: false
 # plot from "cyberbullying" data
 ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Total, group = 1)) +geom_point()+
   geom_line() +
@@ -182,40 +157,32 @@ ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y =
                limits = c(as.Date("2012-01-01"), as.Date("2021-03-01")))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
-<<<<<<< HEAD
 
- The data presented in @fig-Composite-Search-Intensity provides valuable insights into the trends of searches from 2012 to 2021. The observed pattern, with peaks of bullying during the first month of school and troughs in the summer, suggests a recurring seasonal variation in the interest or concern about bullying . This cyclic behavior aligns with the typical school calendar, highlighting a potential correlation between the academic year's start and increased awareness or experiences related to bullying.
+ The data presented in @fig-Composite-Search-Intensity-bully provides valuable insights into the trends of searches from 2012 to 2021. The observed pattern, with peaks of bullying during the first month of school and troughs in the summer, suggests a recurring seasonal variation in the interest or concern about bullying . This cyclic behavior aligns with the typical school calendar, highlighting a potential correlation between the academic year's start and increased awareness or experiences related to bullying.
 
-The introduction of the red dotted line indicating the onset of the pandemic adds an intriguing layer to the analysis. It appears that the traditional pattern of increased bullying searches during the initial school month was disrupted by the pandemic.(@fig-Composite-Search-Intensity-school ) With the shift to online learning, there was a noticeable departure from the usual surge in bullying-related searches. This alteration in behavior might be attributed to changes in the educational environment, as students and educators adapted to new modes of interaction.
+The introduction of the red dotted line indicating the onset of the pandemic adds an intriguing layer to the analysis. It appears that the traditional pattern of increased bullying searches during the initial school month was disrupted by the pandemic. In @fig-Composite-Search-Intensity-sch, we can see that with the shift to online learning, there was a noticeable departure from the usual surge in bullying-related searches. This alteration in behavior might be attributed to changes in the educational environment, as students and educators adapted to new modes of interaction.
 
-Surprisingly, despite the overall decrease in bullying searches during the pandemic, cyberbullying searches saw a notable rebound.(@fig-Composite-Search-Intensity-cyber ) This suggests that while traditional forms of bullying may have diminished due to reduced in-person interactions, the online realm became a focal point for bullying concerns. The fact that cyberbullying searches did not rebound significantly may indicate that, even in the digital space, the overall awareness or concerns related to bullying remained somewhat subdued during this period.
+Surprisingly, despite the overall decrease in bullying searches during the pandemic, cyberbullying searches saw a notable rebound. (@fig-Composite-Search-Intensity-cyber) This suggests that while traditional forms of bullying may have diminished due to reduced in-person interactions, the online realm became a focal point for bullying concerns. The fact that cyberbullying searches did not rebound significantly may indicate that, even in the digital space, the overall awareness or concerns related to bullying remained somewhat subdued during this period.
 
 The findings underscore the complex interplay between societal factors, educational settings, and the digital landscape in shaping the dynamics of bullying searches. Future research could delve deeper into the specific nuances of cyberbullying during the pandemic, exploring how the online learning environment may have influenced the prevalence and perception of such incidents. Additionally, understanding the lasting impact of these changes on bullying awareness and intervention efforts is crucial for developing effective strategies to address this issue in evolving educational landscapes.
-=======
-@fig-Composite-Search-Intensity-bully, @fig-Composite-Search-Intensity-sch, @fig-Composite-Search-Intensity-cyber shows the number of searches for bullying
-(by category) starting in 2012 and ending in 2021. The graph visually shows how bullying searches relate to time. From this we can see every year during the first month of school, the number of searches for bullying rises to a peak, and then quickly dwindles to a trough in the summer. Depending on where the red dotted line is, that's when the pandemic started. Affected by online learning, the search volume for bullying broke the pattern of previous years and remained at a low level. Only searches for cyberbullying rebounded, but not by much.
->>>>>>> 72b39ae77c049671a5478d45d66442f4880ee284
 
 
 ```{r}
 #| label: fig-Number-of-Searches-represented-by-point-size
-#| fig-cap: Composite-Search-Intensity by type
+#| fig-cap: Scatter Plot of Fraction vs. US State, number of searches represented by point size
 #| warning: false
 #| message: false
 #| echo: false
 
 ggplot(data = state_ratios, aes(x = fraction, y = us_state, size = num_of_searches)) +
   geom_point(alpha = 0.5, color = "blue") +  # Adjust color as needed
-  labs(title = "Scatter Plot of Fraction vs. US State",
-       x = "Fraction",
-       y = "US State",
-       subtitle = "Number of Searches represented by point size") +
+  labs(x = "Fraction", y = "US State") +
   theme_minimal()  # Customize the theme as needed
 ```
 
 \newpage
 
-# Discussion
+# Discussion {#sec-discussion}
 
 ## COVID-19 Effects on Bullying
 The overall bullying (@fig-Composite-Search-Intensity-bully) displays a decreasing trend over time, with a significant decline when COVID-19 pandemic emerged. The impact of COVID-19 on bullying cases results in a reduction to the lowest levels observed. The search intensities of bullying during and after remote learning sometimes almost reached zero. 
