@@ -18,6 +18,7 @@ bibliography: references.bib
 #| warning: false
 #| message: false
 
+# install packages
 library(tidyverse)
 library(palmerpenguins)
 ```
@@ -54,6 +55,11 @@ The original dataset contained 5 variables, which are named as â€œdma_json_codeâ
  
 
 ```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+# import cleaned data
 file_path <- "../../outputs/data/bully_clean_data.csv"
 bully_clean_data <- read.csv(file_path)
 bully_clean_data$date <- as.Date(bully_clean_data$date)
@@ -79,9 +85,12 @@ Talk way more about it.
 #| warning: false
 #| message: false
 #| echo: false
+
+# plot graphs
 library(ggplot2)
 library(dplyr)
-# Assuming the date format is "%Y-%m-%d", you can use the following code
+
+
 bully_data <- subset(bully_clean_data, bully_type == "sch_cyb_bully")
 
 bully_data <- bully_data %>%
@@ -95,7 +104,8 @@ cyberbully_data <- subset(bully_clean_data, bully_type == "cyberbully")
 cyberbully_data <- cyberbully_data %>%
   group_by(date) %>%
   summarise(Total = sum(num_of_searches))
-# Create a ggplot object for the composite search measure
+
+# plot from "bullying" data
 ggplot(bully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Total, group = 1)) +geom_point()+
   geom_line() +
   ggtitle("Composite Search Intensity for School Bullying and Cyberbullying") +
@@ -108,6 +118,7 @@ ggplot(bully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Tota
                limits = c(as.Date("2012-01-01"), as.Date("2021-03-01")))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+# plot from "school bullying" data
 ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Total, group = 1)) +geom_point()+
   geom_line() +
   ggtitle("Composite Search Intensity for School Bullying") +
@@ -120,6 +131,7 @@ ggplot(schbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = T
                limits = c(as.Date("2012-01-01"), as.Date("2021-03-01")))+
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+# plot from "cyberbullying" data
 ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y = Total, group = 1)) +geom_point()+
   geom_line() +
   ggtitle("Composite Search Intensity forCyberbullying") +
@@ -144,6 +156,7 @@ ggplot(cyberbully_data, aes(x = date),aes(y = Total),mapping = aes(x = date, y =
 #| warning: false
 #| message: false
 #| echo: false
+
 ggplot(data = state_ratios, aes(x = fraction, y = us_state, size = num_of_searches)) +
   geom_point(alpha = 0.5, color = "blue") +  # Adjust color as needed
   labs(title = "Scatter Plot of Fraction vs. US State",
